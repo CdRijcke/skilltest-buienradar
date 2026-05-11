@@ -18,7 +18,22 @@ class StationMeasurement(BaseModel):
     stationid: int
 
 
-    @field_validator("temperature", mode="before")
+    @field_validator("temperature",
+                     "groundtemperature",
+                     "feeltemperature",
+                     "windgusts",
+                     "windspeedBft",
+                     "humidity",
+                     "precipitation",
+                     "sunpower", mode="before")
     @classmethod
     def coerce_to_float(cls, v: int | float) -> float:
         return float(v)
+
+
+class WeatherStations(BaseModel):
+    stationid: int
+    stationname: str
+    lat: float
+    lon: float
+    regio: str
