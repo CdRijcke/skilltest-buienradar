@@ -1,0 +1,4 @@
+from skilltest.data_visualisation import plot_temperature_per_station
+
+
+plot_temperature_per_station()
