@@ -6,6 +6,7 @@ from skilltest.data_analysis import (get_north_sea_station,
                                      get_weather_station_with_highest_temp,
                                      get_average_temperature,
                                      get_biggest_feel_temp_diff)
+from skilltest.data_visualisation import plot_temperature_per_station
 
 
 with open("data/data_buienradar.json") as f:
@@ -54,3 +55,6 @@ station = get_north_sea_station()  # 'Meetstation Zeeplatform F-3'
     # if old: stop the process. the data should be present in the next run.
 # if the data is new, load it into the database
 # after loading the data, a different process can be started to apply analysis and update data elsewhere.
+
+# Q9B
+plot_temperature_per_station()
